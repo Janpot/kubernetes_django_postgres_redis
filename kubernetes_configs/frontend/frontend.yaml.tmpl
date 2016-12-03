@@ -1,4 +1,4 @@
-# Copyright 2015 Google Inc.
+# Copyright 2016 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,14 +33,19 @@ spec:
         ports:
         - containerPort: 8080
         # uncomment the following lines with NODB set to 0, so you can mount the DB secrest
-        volumeMounts:
-        - name: secrets
-          mountPath: /etc/secrets
-          readOnly: true
-      volumes:
-      - name: secrets
-        secret:
-          secretName: db-passwords
+        #volumeMounts:
+        #- name: secrets
+        #  mountPath: /etc/secrets
+        #  readOnly: true
+        #- name: reload
+        #  mountPath: /app
+      #volumes:
+      #- name: secrets
+      #  secret:
+      #    secretName: db-passwords
+      #- name: reload
+      #        hostPath:
+      #          path: /Users/<path to your application code>
 
 ---
 

@@ -41,4 +41,4 @@ ENV NODB 1
 # Add application code.
 ADD . /app
 
-CMD export DJANGO_PASSWORD=$(cat /etc/secrets/djangouserpw); gunicorn -b :$PORT mysite.wsgi
+CMD export DJANGO_PASSWORD=$(cat /etc/secrets/djangouserpw); gunicorn --reload -b :$PORT mysite.wsgi
